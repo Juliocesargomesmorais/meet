@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestões de Lugares</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 5px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        
+        button:active {
+            transform: scale(0.95);
+        }
+        
+        button:nth-of-type(1) {
+            background-color: #ff6f61;
+        }
+        
+        button:nth-of-type(2) {
+            background-color: #00bcd4;
+        }
+        
+        button:nth-of-type(3) {
+            background-color: #ff9800;
+        }
+        
+        button:nth-of-type(4) {
+            background-color: #8bc34a;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Escolha um Lugar</h1>
+        <div class="buttons">
+            <button onclick="selectPlace('Shopping')">Shopping</button>
+            <button onclick="selectPlace('Cinema')">Cinema</button>
+            <button onclick="selectPlace('Restaurante')">Restaurante</button>
+            <button onclick="selectPlace('Parque')">Parque</button>
+            <button onclick="selectPlace('Outro')">Outro</button>
+        </div>
+    </div>
+    <script>
+        function selectPlace(location) {
+            alert(`Ótima escolha! Vamos para ${location}.
+            (me informe o local escolhido!!)`);
+            sendEmail(location);
+            window.location.href = 'index.html';
+        }
+
+        function sendEmail(location) {
+            const subject = 'Local escolhido';
+            const body = `O local selecionado foi: ${location}`;
+        }
+    </script>
+</body>
+</html>
